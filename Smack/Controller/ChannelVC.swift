@@ -13,7 +13,7 @@ class ChannelVC: UIViewController {
     //Outlets
    //need to have an outlet to change it when the user is logged in
     @IBOutlet var loginButton: UIButton!
-    
+    @IBAction func prepare(for segue: UIStoryboardSegue){}
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class ChannelVC: UIViewController {
     }
 
     @IBAction func loginButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: TO_Login, sender: nil)
+        performSegue(withIdentifier: TO_LOGIN, sender: nil)
     }
     
     
