@@ -10,9 +10,38 @@ import UIKit
 
 class CreateAccountVC: UIViewController {
 
+    //OUTLETS
+    @IBOutlet var userEmailTxt: UITextField!
+    @IBOutlet var usernameTXT: UITextField!
+    @IBOutlet var passwordTxt: UITextField!
+    @IBOutlet var userImg: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    
+    
+    @IBAction func createAccountPressed(_ sender: Any) {
+        
+        guard let email = userEmailTxt.text, userEmailTxt.text != "" else {return}
+        guard let password = passwordTxt.text, passwordTxt.text != "" else {return}
+        
+        AuthService.instance.registerUsers(email: email, password: password) { (success) in
+            if success {
+                print("Registered user")
+            } else {
+                print("Oh dear god")
+            }
+        }
+    }
+    
+    
+    @IBAction func pickAvatarPressed(_ sender: Any) {
+    }
+    
+    @IBAction func pickBgColorPressed(_ sender: Any) {
     }
     
     @IBAction func closePressed(_ sender: Any) {

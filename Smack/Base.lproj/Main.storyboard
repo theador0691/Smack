@@ -172,7 +172,7 @@
                                     <action selector="createAccountButtonPressed:" destination="Kq7-cr-vNK" eventType="touchUpInside" id="NSf-OA-ocb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgl-Jw-dMW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgl-Jw-dMW" customClass="RoundedButton" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="62" y="286" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.58039215690000001" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -180,9 +180,14 @@
                                     <constraint firstAttribute="height" constant="50" id="Xxf-TH-pcD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Log In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -302,9 +307,10 @@
                                 </state>
                                 <connections>
                                     <action selector="createAccountButtonPressed:" destination="Kq7-cr-vNK" eventType="touchUpInside" id="3ek-w1-4JG"/>
+                                    <action selector="pickAvatarPressed:" destination="CCV-En-TPh" eventType="touchUpInside" id="cZf-Ju-j1p"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FS7-3M-pGi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FS7-3M-pGi" customClass="RoundedButton" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="62.5" y="579" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.58039215690000001" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -315,6 +321,14 @@
                                 <state key="normal" title="Cretae Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createAccountPressed:" destination="CCV-En-TPh" eventType="touchUpInside" id="EfO-lM-dPV"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="gpg-5K-GI7">
                                 <rect key="frame" x="138" y="299" width="100" height="100"/>
@@ -335,6 +349,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createAccountButtonPressed:" destination="Kq7-cr-vNK" eventType="touchUpInside" id="qZZ-bf-ZzG"/>
+                                    <action selector="pickBgColorPressed:" destination="CCV-En-TPh" eventType="touchUpInside" id="NEf-55-G6t"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -359,6 +374,10 @@
                         <viewLayoutGuide key="safeArea" id="XaF-en-tTg"/>
                     </view>
                     <connections>
+                        <outlet property="passwordTxt" destination="egM-rG-lvr" id="rIk-rS-y9K"/>
+                        <outlet property="userEmailTxt" destination="TKI-9t-AfP" id="Eqz-E9-d4K"/>
+                        <outlet property="userImg" destination="gpg-5K-GI7" id="AlK-sJ-IdK"/>
+                        <outlet property="usernameTXT" destination="jrr-c6-QqX" id="gtf-T2-t5r"/>
                         <segue destination="g5a-p2-ejM" kind="unwind" identifier="unwindToChannel" unwindAction="prepareFor:" id="11Q-Ud-eTI"/>
                     </connections>
                 </viewController>
