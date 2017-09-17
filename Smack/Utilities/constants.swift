@@ -18,16 +18,20 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 //URL Constant
 let BASE_URL = "https://chittychatapp.herokuapp.com/v1/"
 let URL_REGISTER = "\(BASE_URL)account/register"
-
+let URL_LOGIN = "\(BASE_URL)account/login"
 //Segues
 let TO_LOGIN = "to_Login"
 let TO_CREATE_ACCOUNT = "toCreateAccount"
 let UNWIND = "unwindToChannel"
 
 //User defaults
-
-
 let TOKEN_KEY = "token"
 let LOGGED_IN_KEY = "loggedIn"
 let USER_EMAIL = "userEmail"
+
+//headers
+let HEADER = [
+    "Content-Type": "application/JSON; character=utf-8"
+]
+
 
